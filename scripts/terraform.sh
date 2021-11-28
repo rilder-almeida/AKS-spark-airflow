@@ -4,7 +4,7 @@
 # bash terraform.sh
 
 clear
-cd ../terraform
+cd terraform
 
 ##
 # Color  Variables
