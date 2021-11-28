@@ -45,6 +45,7 @@ export AIRFLOW_VAR_lastname="AKS"
 export AIRFLOW_VAR_git_repo="https://github.com/username/project_name.git"
 
 export AIRFLOW_VAR_fernet_key=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")
+export AIRFLOW_VAR_webserver_secret_key=$(python3 -c "import secrets; print(secrets.token_hex(16))")
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Show setted variables

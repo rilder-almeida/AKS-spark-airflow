@@ -30,6 +30,8 @@ unset TF_VAR_serviceprinciple_key
 # Airflow variables
 
 unset AIRFLOW_VAR_fernet_key
+unset AIRFLOW_VAR_webserver_secret_key
+
 unset AIRFLOW_VAR_username
 unset AIRFLOW_VAR_email
 unset AIRFLOW_VAR_firstname
