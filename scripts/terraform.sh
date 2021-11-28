@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# Apply with:
-# bash ./scripts/terraform.sh
+# Run with:
+# bash terraform.sh
 
-clear 
+clear
+cd ../terraform
 
 ##
 # Color  Variables
@@ -24,31 +25,36 @@ ColorBlue(){
 }
 
 terraform_init(){
-    cd terraform
-    terraform init 
+    terraform init
+    bash ../scripts/00-unset_variables.sh
+    source ../scripts/01-set_variables.sh
+    bash ../scripts/02-role-assignment.sh
+
 }
 
 terraform_format_plan(){
-    cd terraform
-    terraform fmt -list=true -check=true -diff=true -recursive=true
+    terraform fmt -check=true -recursive=true
+    terraform validate
     terraform plan 
 }
 
 terraform_apply(){
-    cd terraform
-    terraform apply 
+    terraform apply
+    source ../scripts/03-get_credentials.sh
+    az group delete --resource-group NetworkWatcherRG --yes --no-wait
+    kubectl get svc
 }
 
 terraform_destroy(){
-    cd terraform
-    terraform destroy 
+    ( terraform destroy && az group delete --resource-group NetworkWatcherRG --yes --no-wait ) || bash ../scripts/delete_all_infra.sh
+    bash ../scripts/00-unset_variables.sh
 }
 
 menu(){
     echo -ne "
     Terraform Menu
     $(ColorGreen '1)') Terraform Init
-    $(ColorGreen '2)') Terraform Format & Plan
+    $(ColorGreen '2)') Terraform Format & Validate & Plan
     $(ColorGreen '3)') Terraform Apply
     $(ColorGreen '4)') Terraform Destroy
     $(ColorGreen '0)') Exit
