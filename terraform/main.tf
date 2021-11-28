@@ -15,7 +15,7 @@ module "cluster" {
   serviceprinciple_key = var.serviceprinciple_key
   ssh_key              = var.ssh_key
   cluster_name         = var.cluster_name
-  rg_name              = var.rg_name
+  cluster_rg_name              = var.cluster_rg_name
   location             = var.location
   kubernetes_version   = var.kubernetes_version
 }
@@ -24,6 +24,6 @@ module "storage" {
   source        = "./modules/storage/"
   sa_name       = var.sa_name
   datalake_name = var.datalake_name
-  rg_name       = var.rg_name
+  storage_rg_name       = var.storage_rg_name
   location      = var.location
 }

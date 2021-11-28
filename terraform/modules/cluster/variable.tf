@@ -18,5 +18,5 @@ variable "ssh_key" {
 variable "cluster_name" {
 }
 
-variable "rg_name" {
+variable "cluster_rg_name" {
 }   

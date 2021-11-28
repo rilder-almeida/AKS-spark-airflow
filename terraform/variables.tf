@@ -25,7 +25,10 @@ variable "kubernetes_version" {
 variable "cluster_name" {
 }
 
-variable "rg_name" {
+variable "cluster_rg_name" {
+}
+
+variable "storage_rg_name" {
 }
 
 variable "sa_name" {

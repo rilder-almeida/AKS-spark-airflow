@@ -1,8 +1,13 @@
 # root/storage
 
+resource "azurerm_resource_group" "storage-rg" {
+  name     = var.storage_rg_name
+  location = var.location
+}
+
 resource "azurerm_storage_account" "aks-sa" {
   name                     = var.sa_name
-  resource_group_name      = var.rg_name
+  resource_group_name      = azurerm_resource_group.storage-rg.name
   location                 = var.location
   account_tier             = "Standard"
   account_replication_type = "RAGRS"

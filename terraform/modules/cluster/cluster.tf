@@ -1,7 +1,7 @@
 #  root/cluster
 
 resource "azurerm_resource_group" "aks-rg" {
-  name     = var.rg_name
+  name     = var.cluster_rg_name
   location = var.location
 }
 
