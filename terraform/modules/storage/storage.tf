@@ -17,5 +17,5 @@ resource "azurerm_storage_account" "aks-sa" {
 
 resource "azurerm_storage_data_lake_gen2_filesystem" "aks-datalake" {
   name               = var.datalake_name
-  datalake_account_id = azurerm_datalake_account.aks-sa.id
+  storage_account_id = azurerm_storage_account.aks-sa.id
 }

@@ -46,7 +46,7 @@ terraform_apply(){
 }
 
 terraform_destroy(){
-    ( terraform destroy && az group delete --resource-group NetworkWatcherRG --yes --no-wait ) || bash ../scripts/delete_all_infra.sh
+    terraform destroy || bash ../scripts/delete_all_infra.sh
     bash ../scripts/00-unset_variables.sh
 }
 
