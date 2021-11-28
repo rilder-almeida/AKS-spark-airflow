@@ -19,3 +19,8 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "aks-datalake" {
   name               = var.datalake_name
   storage_account_id = azurerm_storage_account.aks-sa.id
 }
+
+resource "azurerm_storage_data_lake_gen2_filesystem" "aks-airflow-logs" {
+  name               = var.airflow_logs
+  storage_account_id = azurerm_storage_account.aks-sa.id
+}

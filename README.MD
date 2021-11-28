@@ -92,7 +92,10 @@ Security > List users > Show record > Reset password
 
 Admin > Connections > Add a new connection
 
-- Connection Id: azure_connection
-- Connection Type: Azure
-
     echo -e "Azure Client ID: $TF_VAR_serviceprinciple_id\nAzure Secret: $TF_VAR_serviceprinciple_key\nAzure Tenant ID: $TF_VAR_tenant_id\nAzure Subscription ID: $TF_VAR_subscription_id"
+
+### Setup to remote Airflow logs
+
+[https://stackoverflow.com/questions/59037889/how-to-ship-airflow-logs-to-azure-blob-store](https://stackoverflow.com/questions/59037889/how-to-ship-airflow-logs-to-azure-blob-store)
+
+[https://www.youtube.com/watch?v=UVoD1defxLE](https://www.youtube.com/watch?v=UVoD1defxLE)
