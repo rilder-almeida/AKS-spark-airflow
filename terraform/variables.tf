@@ -1,5 +1,5 @@
 # root
- 
+
 variable "serviceprinciple_id" {
 }
 
@@ -20,11 +20,16 @@ variable "location" {
 }
 
 variable "kubernetes_version" {
-    default = "1.16.10"
 }
 
 variable "cluster_name" {
-}   
+}
 
 variable "rg_name" {
-}   
+}
+
+variable "sa_name" {
+}
+
+variable "datalake_name" {
+}

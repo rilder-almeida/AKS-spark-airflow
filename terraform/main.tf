@@ -18,5 +18,12 @@ module "cluster" {
   rg_name              = var.rg_name
   location             = var.location
   kubernetes_version   = var.kubernetes_version
+}
 
+module "storage" {
+  source        = "./modules/storage/"
+  sa_name       = var.sa_name
+  datalake_name = var.datalake_name
+  rg_name       = var.rg_name
+  location      = var.location
 }
