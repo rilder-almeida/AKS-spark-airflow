@@ -27,5 +27,4 @@ terraform.rc
 *.terraform.lock.hcl
 
 # Local project files
-starter_python_project.sh
-readme_template.md
+airflow-values.yaml

@@ -6,7 +6,10 @@
 # Set UUID
 UUID=$(cat /proc/sys/kernel/random/uuid) && export TF_VAR_UUID=$(echo "${UUID: -12}")
 
-# Set personal variables
+# ---------------------------------------------------------------------------------------------------------------------
+# Terraform variables
+
+# Set cluster variables
 export TF_VAR_location="westus"
 export TF_VAR_cluster_name="aks-cluster"
 export TF_VAR_cluster_rg_name="aks-rg"
@@ -17,7 +20,6 @@ export TF_VAR_kubernetes_version="1.20.9"
 export TF_VAR_sa_name="sa$TF_VAR_UUID"
 export TF_VAR_datalake_rg_name="datalake-rg"
 export TF_VAR_datalake_name="datalake-$TF_VAR_UUID"
-
 
 # Set Azure Account variables
 export TF_VAR_tenant_id=$(az account show --query tenantId -o tsv)
@@ -32,6 +34,23 @@ export TF_VAR_serviceprinciple_key=$(echo $SERVICE_PRINCIPAL_JSON | jq -r '.pass
 [ ! -f ~/.ssh/id_rsa ] && ssh-keygen -t rsa -b 4096 -C $(az account show --query user.name -o tsv) -q -f ~/.ssh/id_rsa
 export TF_VAR_ssh_key=$(cat ~/.ssh/id_rsa.pub)
 
-# Show seted variables
+# ---------------------------------------------------------------------------------------------------------------------
+# Airflow variables
+
+export AIRFLOW_VAR_username="username"
+export AIRFLOW_VAR_email="airflow@airflow.com"
+export AIRFLOW_VAR_firstname="Airflow"
+export AIRFLOW_VAR_lastname="AKS"
+
+export AIRFLOW_VAR_git_repo="https://github.com/username/project_name.git"
+
+export AIRFLOW_VAR_fernet_key=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Show setted variables
+echo "Setted env variables:"
+echo "Terraform:"
 env | grep TF_VAR*
 env | grep SERVICE_PRINCIPAL*
+echo "Airflow:"
+env | grep AIRFLOW_VAR_*

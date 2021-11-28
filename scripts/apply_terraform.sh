@@ -32,7 +32,7 @@ terraform_init(){
 
 }
 
-terraform_format_plan(){
+terraform_format_validate_plan(){
     terraform fmt -check=true -recursive=true
     terraform validate
     terraform plan 
@@ -62,7 +62,7 @@ menu(){
             read a
             case $a in
                 1) terraform_init ; menu ;;
-                2) terraform_format_plan ; menu ;;
+                2) terraform_format_validate_plan ; menu ;;
                 3) terraform_apply ; menu ;;
                 4) terraform_destroy ; menu ;;
             0) clear; exit 0 ;;
