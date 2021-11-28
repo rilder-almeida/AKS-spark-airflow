@@ -13,7 +13,7 @@ unset TF_VAR_kubernetes_version
 unset TF_VAR_UUID
 
 unset TF_VAR_sa_name
-unset TF_VAR_storage_rg_name
+unset TF_VAR_datalake_rg_name
 unset TF_VAR_datalake_name
 
 unset TF_VAR_ssh_key

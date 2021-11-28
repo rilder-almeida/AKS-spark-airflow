@@ -28,7 +28,7 @@ variable "cluster_name" {
 variable "cluster_rg_name" {
 }
 
-variable "storage_rg_name" {
+variable "datalake_rg_name" {
 }
 
 variable "sa_name" {

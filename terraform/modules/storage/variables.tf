@@ -9,5 +9,5 @@ variable "datalake_name" {
 variable "location" {
 }
 
-variable "storage_rg_name" {
+variable "datalake_rg_name" {
 }

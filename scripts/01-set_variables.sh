@@ -15,7 +15,7 @@ export TF_VAR_kubernetes_version="1.20.9"
 
 # Set storage variables
 export TF_VAR_sa_name="sa$TF_VAR_UUID"
-export TF_VAR_storage_rg_name="datalake-rg"
+export TF_VAR_datalake_rg_name="datalake-rg"
 export TF_VAR_datalake_name="datalake-$TF_VAR_UUID"
 
 

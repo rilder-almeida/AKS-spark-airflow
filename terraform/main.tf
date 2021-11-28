@@ -24,6 +24,6 @@ module "storage" {
   source        = "./modules/storage/"
   sa_name       = var.sa_name
   datalake_name = var.datalake_name
-  storage_rg_name       = var.storage_rg_name
+  datalake_rg_name       = var.datalake_rg_name
   location      = var.location
 }

@@ -1,7 +1,7 @@
 # root/storage
 
 resource "azurerm_resource_group" "storage-rg" {
-  name     = var.storage_rg_name
+  name     = var.datalake_rg_name
   location = var.location
 }
 
@@ -17,5 +17,5 @@ resource "azurerm_storage_account" "aks-sa" {
 
 resource "azurerm_storage_data_lake_gen2_filesystem" "aks-datalake" {
   name               = var.datalake_name
-  storage_account_id = azurerm_storage_account.aks-sa.id
+  datalake_account_id = azurerm_datalake_account.aks-sa.id
 }
