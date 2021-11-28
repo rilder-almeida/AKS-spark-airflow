@@ -28,3 +28,7 @@ terraform.rc
 
 # Local project files
 airflow-values.yaml
+kubernetes/airflow/config
+kubernetes/airflow/logs
+kubernetes/airflow/airflow.cfg
+kubernetes/airflow/webserver_config.py
