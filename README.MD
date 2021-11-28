@@ -92,9 +92,7 @@ Security > List users > Show record > Reset password
 
 Admin > Connections > Add a new connection
 
-    echo -e "Azure Client ID: $TF_VAR_serviceprinciple_id\nAzure Secret: $TF_VAR_serviceprinciple_key\nAzure Tenant ID: $TF_VAR_tenant_id\nAzure Subscription ID: $TF_VAR_subscription_id"
-
 - Connection Id: azure_connection
 - Connection Type: Azure
-- Login: <your_access_key_id>
-- Password: <your_secret_access_key>
+
+    echo -e "Azure Client ID: $TF_VAR_serviceprinciple_id\nAzure Secret: $TF_VAR_serviceprinciple_key\nAzure Tenant ID: $TF_VAR_tenant_id\nAzure Subscription ID: $TF_VAR_subscription_id"
