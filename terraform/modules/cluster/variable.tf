@@ -1,4 +1,4 @@
-#  cluster
+#  root/cluster
 
 variable "serviceprinciple_id" {
 }
@@ -10,14 +10,13 @@ variable "location" {
 }
 
 variable "kubernetes_version" {
-  default = "1.16.10"
 }
 
 variable "ssh_key" {
 }
 
 variable "cluster_name" {
-}   
+}
 
 variable "rg_name" {
 }   

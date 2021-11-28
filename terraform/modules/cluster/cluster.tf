@@ -1,4 +1,4 @@
-#  cluster
+#  root/cluster
 
 resource "azurerm_resource_group" "aks-rg" {
   name     = var.rg_name
@@ -13,11 +13,11 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
   kubernetes_version  = var.kubernetes_version
 
   default_node_pool {
-    name       = "default"
-    min_count  = 3
-    max_count  = 5
-    enable_auto_scaling  = true
-    vm_size    = "Standard_D2_v3"
+    name                = "default"
+    min_count           = 3
+    max_count           = 5
+    enable_auto_scaling = true
+    vm_size             = "Standard_D2_v3"
 
   }
 
