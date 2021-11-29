@@ -1,4 +1,4 @@
-#
+# [in development]
 
 ## Env Variables
 
@@ -73,7 +73,7 @@ user: admin
 
     helm install airflow apache-airflow/airflow -f ./kubernetes/airflow/airflow-values.yaml -n airflow
 
-## Get Airflow service
+### Get Airflow service
 
     kubectl get svc -n airflow
 
@@ -81,8 +81,8 @@ user: admin
 
     kubectl port-forward svc/airflow-webserver 8080:8080 --namespace airflow
 
-user: admin
-password: admin
+- user: admin
+- password: admin
 
 ### Change admin password
 
@@ -95,6 +95,8 @@ Admin > Connections > Add a new connection
     echo -e "Azure Client ID: $TF_VAR_serviceprinciple_id\nAzure Secret: $TF_VAR_serviceprinciple_key\nAzure Tenant ID: $TF_VAR_tenant_id\nAzure Subscription ID: $TF_VAR_subscription_id"
 
 ### Setup to remote Airflow logs
+
+[https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/2.0.0/logging.html#writing-logs-to-azure-blob-storage](https://airflow.apache.org/docs/apache-airflow-providers-microsoft-azure/2.0.0/logging.html#writing-logs-to-azure-blob-storage)
 
 [https://stackoverflow.com/questions/59037889/how-to-ship-airflow-logs-to-azure-blob-store](https://stackoverflow.com/questions/59037889/how-to-ship-airflow-logs-to-azure-blob-store)
 
