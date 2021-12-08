@@ -23,7 +23,9 @@
 
 ### Apply Terraform
 
-    bash apply_terraform.sh
+    source ./scripts/01-set_variables.sh && \
+    bash ./scripts/02-role-assignment.sh && \
+    bash ./scripts/apply_terraform.sh
 
 - Terraform Init
 - Terraform Format & Validate & Plan
