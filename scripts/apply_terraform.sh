@@ -28,7 +28,7 @@ terraform_init(){
     terraform init
     # bash ../scripts/00-unset_variables.sh
     # source ../scripts/01-set_variables.sh
-    bash ../scripts/02-role-assignment.sh
+    # bash ../scripts/02-role-assignment.sh
 
 }
 
