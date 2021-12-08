@@ -91,7 +91,7 @@ user: admin
 
     kubectl port-forward svc/airflow-webserver 8080:8080 --namespace airflow
 
-- user: admin
+- user: your AIRFLOW_VAR_username
 - password: admin
 
 ### Change admin password
