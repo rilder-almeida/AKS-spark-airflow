@@ -58,6 +58,7 @@ user: admin
 ### Expose external ip
 
     kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+    
 
     kubectl get svc -n argocd |grep LoadBalancer
 
