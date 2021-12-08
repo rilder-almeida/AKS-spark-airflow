@@ -36,6 +36,7 @@ unset AIRFLOW_VAR_username
 unset AIRFLOW_VAR_email
 unset AIRFLOW_VAR_firstname
 unset AIRFLOW_VAR_lastname
+unset AIRFLOW_VAR_git_repo
 
 # ---------------------------------------------------------------------------------------------------------------------
 
